@@ -73,5 +73,6 @@
         color: blue;
         font-family: 'Times New Roman', Times, serif;
         border-radius: 20px;
-    
+    }
+     
     input[type=number] {text-align: right;}
