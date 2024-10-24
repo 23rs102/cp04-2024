@@ -62,6 +62,8 @@
 
     #btnC {
         font-size: 10px;
+        color: yellow;
+        background-color: black;
         position:absolute; top:380px; left:70%; width:28%; height:60px;
     }
     

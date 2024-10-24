@@ -155,6 +155,7 @@
     var period = 0;
     var rest = 0;
     var etime = 0;
+    var eptime = 0;
 
 
     
@@ -187,7 +188,9 @@
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
         active = true;
-        startTime = new Date();
+        startTime = new Date() - eptime*1000;
+        $("#btnB").prop("disabled",false);
+        $("#btnA").prop("disabled",true);
         
         
     }
@@ -195,6 +198,8 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+        eptime = etime;
+        $("#btnA").prop("disabled",false);
         
         
     }
@@ -204,8 +209,11 @@
         alarm();
         active = false;
         period = 60* parseInt($("#minute").val()) + parseInt($("#second").val());
+        eptime = 0;
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
+        $("#btnA").prop("disabled",false);
+        $("#btnB").prop("disabled",true);
         
     }
     
